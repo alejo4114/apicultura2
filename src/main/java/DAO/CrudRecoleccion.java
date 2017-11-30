@@ -89,7 +89,7 @@ public class CrudRecoleccion {
             System.out.println("LLegue hasta aca");
             Statement statement = connection.createStatement();
 
-            ResultSet rs = statement.executeQuery("select id_colmena, kilos_miel from Recoleccion where (kilos_miel>2 and id_recol=123456) order by kilos_miel ASC limit 10");
+            ResultSet rs = statement.executeQuery("select id_colmena, kilos_miel from Recoleccion where (kilos_miel>2 and id_recol!=123456) order by kilos_miel ASC limit 10");
             while (rs.next()) {
                 Recoleccion rec = new Recoleccion();
                 rec.setId_colmena(rs.getInt("id_colmena"));
